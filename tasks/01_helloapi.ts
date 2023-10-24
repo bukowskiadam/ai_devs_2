@@ -2,5 +2,6 @@ import { Task } from "../lib/Task";
 
 const task = new Task("helloapi");
 
-const data = await task.getInput<{ cookie: string }>();
-console.log(await task.submit(data.cookie));
+const solver = (input: { cookie: string }) => input.cookie;
+
+console.log(await task.solve(solver));
