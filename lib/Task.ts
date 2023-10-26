@@ -1,3 +1,4 @@
+import { debug } from "./debug";
 import type { TokenResponse } from "./types";
 
 const apiUrl = process.env.AIDEVS_API_URL;
@@ -59,7 +60,13 @@ export class Task {
     ) => AnswerResponseData | Promise<AnswerResponseData>
   ) {
     const input: InputData = await this.getInput();
+
+    debug("Input data:", input);
+
     const answer = await solver(input);
+
+    debug("Answer:", answer);
+
     return this.submit(answer);
   }
 }
