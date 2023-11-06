@@ -1,20 +1,9 @@
-import OpenAI from "openai";
-
 import { Task } from "../lib/Task";
 import { ChatCompletionCreateParams } from "openai/resources/index.mjs";
 
 const task = new Task("functions");
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-type InputData = {
-  input: Array<string>;
-  question: string;
-};
-
-const solver = (args: InputData): ChatCompletionCreateParams.Function => ({
+const solver = (): ChatCompletionCreateParams.Function => ({
   name: "addUser",
   description: "Adding a new user",
   parameters: {
