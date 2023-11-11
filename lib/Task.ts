@@ -29,7 +29,7 @@ export class Task {
     this.token = tokenData.token;
   }
 
-  private async getInput<InputData>(): Promise<InputData> {
+  async getInput<InputData>(): Promise<InputData> {
     await this.authorize();
 
     if (!this.token) {
@@ -41,9 +41,7 @@ export class Task {
     return inputResponse.json();
   }
 
-  private async submit<AnswerResponseData>(
-    answer: any
-  ): Promise<AnswerResponseData> {
+  async submit<AnswerResponseData>(answer: any): Promise<AnswerResponseData> {
     const answerResponse = await fetch(`${apiUrl}/answer/${this.token}`, {
       method: "post",
       body: JSON.stringify({
