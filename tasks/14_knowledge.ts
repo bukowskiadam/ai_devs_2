@@ -10,7 +10,6 @@ const openai = new OpenAI({
 });
 
 type InputData = {
-  input: Array<string>;
   question: string;
 };
 
