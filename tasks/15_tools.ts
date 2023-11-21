@@ -1,7 +1,6 @@
 import OpenAI from "openai";
 
 import { Task } from "../lib/Task";
-import { debug } from "../lib/debug";
 import { waitForInput } from "../lib/readline";
 
 const task = new Task("tools");
