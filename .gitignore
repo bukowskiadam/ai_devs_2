@@ -176,3 +176,5 @@ dist
 
 # qdrant
 qdrant_storage
+
+tasks/output
